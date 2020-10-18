@@ -7,7 +7,7 @@ let scoreBtnEl = document.createElement("button");
 scoreBtnEl.textContent = "View High Scores";
 highScoreBtn.appendChild(scoreBtnEl);
 // Creating and Displaying Timer
-let timerEl = document.createElement("h3");
+let timerEl = document.createElement("h4");
 timerEl.textContent = "Time Left: " + seconds;
 timer.appendChild(timerEl);
 // Creating and Displaying Quiz Header
@@ -22,3 +22,24 @@ quiz.appendChild(quizElBody);
 let quizElStartBtn = document.createElement("button");
 quizElStartBtn.textContent = "Start"
 quiz.appendChild(quizElStartBtn);
+// Starts counting down time once start button is clicked and stops when seconds = 0
+function startTimer() {
+    let timerInterval = setInterval(function () {
+        seconds--;
+        timerEl.textContent = "Time Left: " + seconds;
+        if (seconds === 0) {
+            clearInterval(timerInterval);
+        }
+    }, 1000);
+}
+
+function main() {
+    seconds = 75;
+    startTimer();
+
+}
+// When start button is clicked quiz starts
+quizElStartBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+        main()
+});
