@@ -6,6 +6,9 @@ let seconds = 0;
 let complete = 0;
 let q = 0;
 
+let responseEl = document.createElement("p");
+response.appendChild(responseEl);
+
 // Creating and Displaying High Score Button
 let scoreBtnEl = document.createElement("button");
 scoreBtnEl.textContent = "View High Scores";
@@ -33,20 +36,37 @@ quiz.appendChild(quizElStartBtn);
 
 let buttonsEl = document.querySelector("#buttons");
 
-let ans1BtnEl = document.querySelector("#ans1Btn");
-ans1BtnEl.setAttribute("style", "display: none");
+// creating divs to put answer buttons in
+let ans1BtnEl = document.createElement("div");
+let ans2BtnEl = document.createElement("div");
+let ans3BtnEl = document.createElement("div");
+let ans4BtnEl = document.createElement("div");
 
-let ans2BtnEl = document.querySelector("#ans2Btn");
-ans2BtnEl.setAttribute("style", "display: none");
+// putting button divs in the html
+buttonsEl.appendChild(ans1BtnEl);
+buttonsEl.appendChild(ans2BtnEl);
+buttonsEl.appendChild(ans3BtnEl);
+buttonsEl.appendChild(ans4BtnEl);
 
-let ans3BtnEl = document.querySelector("#ans3Btn");
-ans3BtnEl.setAttribute("style", "display: none");
+// creating the answer buttons
+let ans1Btn = document.createElement("button");
+let ans2Btn = document.createElement("button");
+let ans3Btn = document.createElement("button");
+let ans4Btn = document.createElement("button");
 
-let ans4BtnEl = document.querySelector("#ans4Btn");
-ans4BtnEl.setAttribute("style", "display: none");
+//putting the answer buttons in their own divs in the html
+ans1BtnEl.appendChild(ans1Btn);
+ans2BtnEl.appendChild(ans2Btn);
+ans3BtnEl.appendChild(ans3Btn);
+ans4BtnEl.appendChild(ans4Btn);
 
-let responseEl = document.createElement("p");
-response.appendChild(responseEl);
+// hiding the buttons
+ans1Btn.setAttribute("style", "Display: none");
+ans2Btn.setAttribute("style", "Display: none");
+ans3Btn.setAttribute("style", "Display: none");
+ans4Btn.setAttribute("style", "Display: none");
+
+
 
 // Starts counting down time once start button is clicked and stops when seconds = 0
 
@@ -57,7 +77,7 @@ function disappear() {
 }
 
 function startTimer() {
-    
+
     let timerInterval = setInterval(function () {
         seconds--;
         timerEl.textContent = "Time Left: " + seconds;
@@ -66,133 +86,133 @@ function startTimer() {
             clearInterval(timerInterval);
         }
     }, 1000);
-    if (complete===1){
+    if (complete === 1) {
         return;
     }
 
 }
 function question1() {
     let q = 1
-    if(q === 2){
+    if (q === 2) {
         return;
     }
     quizElHead.textContent = "Question 1";
     quizElBody.textContent = "insert question 1 here";
     quizElStartBtn.remove();
 
-    ans1BtnEl.textContent = "Answer 1";
-    ans1BtnEl.setAttribute("style", "display: list-item");
+    ans1Btn.textContent = "Answer 1";
+    ans1Btn.setAttribute("style", "display: block");
     ans1Btn.setAttribute("value", "correct");
 
-    ans2BtnEl.textContent = "Answer 2";
-    ans2BtnEl.setAttribute("style", "display: block");
+    ans2Btn.textContent = "Answer 2";
+    ans2Btn.setAttribute("style", "display: block");
     ans2Btn.setAttribute("value", "wrong");
 
-    ans3BtnEl.textContent = "Answer 3";
-    ans3BtnEl.setAttribute("style", "display: block");
+    ans3Btn.textContent = "Answer 3";
+    ans3Btn.setAttribute("style", "display: block");
     ans3Btn.setAttribute("value", "wrong");
 
-    ans4BtnEl.textContent = "Answer 4";
-    ans4BtnEl.setAttribute("style", "display: block");
-    ans4BtnEl.setAttribute("value","wrong");
+    ans4Btn.textContent = "Answer 4";
+    ans4Btn.setAttribute("style", "display: block");
+    ans4Btn.setAttribute("value", "wrong");
 
 }
 function question2() {
-    let q = 2 ;
-    if(q === 3){
+    let q = 2;
+    if (q === 3) {
         return;
     }
     quizElHead.textContent = "Question 2";
     quizElBody.textContent = "insert question 2 here";
 
-    ans1BtnEl.textContent = "Answer 1b";
-    ans1BtnEl.setAttribute("style", "display: block");
+    ans1Btn.textContent = "Answer 1b";
+    ans1Btn.setAttribute("style", "display: block");
     ans1Btn.setAttribute("value", "wrong");
-    
-    ans2BtnEl.textContent = "Answer 2b";
-    ans2BtnEl.setAttribute("style", "display: block");
+
+    ans2Btn.textContent = "Answer 2b";
+    ans2Btn.setAttribute("style", "display: block");
     ans2Btn.setAttribute("value", "correct");
 
-    ans3BtnEl.textContent = "Answer 3b";
-    ans3BtnEl.setAttribute("style", "display: block");
+    ans3Btn.textContent = "Answer 3b";
+    ans3Btn.setAttribute("style", "display: block");
     ans3Btn.setAttribute("value", "wrong");
 
-    ans4BtnEl.textContent = "Answer 4b";
-    ans4BtnEl.setAttribute("style", "display: block");
+    ans4Btn.textContent = "Answer 4b";
+    ans4Btn.setAttribute("style", "display: block");
     ans4Btn.setAttribute("value", "wrong");
 }
 function question3() {
     let q = 3
-    if(q === 4){
+    if (q === 4) {
         return;
     }
     quizElHead.textContent = "Question 3";
     quizElBody.textContent = "insert question 3 here";
 
-    ans1BtnEl.textContent = "Answer 1c";
-    ans1BtnEl.setAttribute("style", "display: block");
+    ans1Btn.textContent = "Answer 1c";
+    ans1Btn.setAttribute("style", "display: block");
     ans1Btn.setAttribute("value", "wrong");
 
-    ans2BtnEl.textContent = "Answer 2c";
-    ans2BtnEl.setAttribute("style", "display: block");
+    ans2Btn.textContent = "Answer 2c";
+    ans2Btn.setAttribute("style", "display: block");
     ans2Btn.setAttribute("value", "wrong");
 
-    ans3BtnEl.textContent = "Answer 3c";
-    ans3BtnEl.setAttribute("style", "display: block");
+    ans3Btn.textContent = "Answer 3c";
+    ans3Btn.setAttribute("style", "display: block");
     ans3Btn.setAttribute("value", "correct");
 
-    ans4BtnEl.textContent = "Answer 4c";
-    ans4BtnEl.setAttribute("style", "display: block");
+    ans4Btn.textContent = "Answer 4c";
+    ans4Btn.setAttribute("style", "display: block");
     ans4Btn.setAttribute("value", "wrong");
 }
 function question4() {
     let q = 4
-    if(q === 5){
+    if (q === 5) {
         return;
     }
     quizElHead.textContent = "Question 4";
     quizElBody.textContent = "insert question 4 here";
 
-    ans1BtnEl.textContent = "Answer 1d";
-    ans1BtnEl.setAttribute("style", "display: block");
+    ans1Btn.textContent = "Answer 1d";
+    ans1Btn.setAttribute("style", "display: block");
     ans1Btn.setAttribute("value", "wrong");
 
-    ans2BtnEl.textContent = "Answer 2d";
-    ans2BtnEl.setAttribute("style", "display: block");
+    ans2Btn.textContent = "Answer 2d";
+    ans2Btn.setAttribute("style", "display: block");
     ans2Btn.setAttribute("value", "wrong");
 
-    ans3BtnEl.textContent = "Answer 3d";
-    ans3BtnEl.setAttribute("style", "display: block");
+    ans3Btn.textContent = "Answer 3d";
+    ans3Btn.setAttribute("style", "display: block");
     ans3Btn.setAttribute("value", "wrong");
 
-    ans4BtnEl.textContent = "Answer 4d";
-    ans4BtnEl.setAttribute("style", "display: block");
+    ans4Btn.textContent = "Answer 4d";
+    ans4Btn.setAttribute("style", "display: block");
     ans4Btn.setAttribute("value", "correct");
 }
 
 function question5() {
     let q = 5
-    if(q === 6){
+    if (q === 6) {
         return;
     }
     quizElHead.textContent = "Question 5";
     quizElBody.textContent = "insert question 5 here";
 
-    ans1BtnEl.textContent = "Answer 1e";
-    ans1BtnEl.setAttribute("style", "display: block");
+    ans1Btn.textContent = "Answer 1e";
+    ans1Btn.setAttribute("style", "display: block");
     ans1Btn.setAttribute("value", "correct");
 
-    ans2BtnEl.textContent = "Answer 2e";
-    ans2BtnEl.setAttribute("style", "display: block");
+    ans2Btn.textContent = "Answer 2e";
+    ans2Btn.setAttribute("style", "display: block");
     ans2Btn.setAttribute("value", "wrong");
 
-    ans3BtnEl.textContent = "Answer 3e";
-    ans3BtnEl.setAttribute("style", "display: block");
-    ans2Btn.setAttribute("value", "wrong");
+    ans3Btn.textContent = "Answer 3e";
+    ans3Btn.setAttribute("style", "display: block");
+    ans3Btn.setAttribute("value", "wrong");
 
-    ans4BtnEl.textContent = "Answer 4e";
-    ans4BtnEl.setAttribute("style", "display: block");
-    ans2Btn.setAttribute("value", "wrong");
+    ans4Btn.textContent = "Answer 4e";
+    ans4Btn.setAttribute("style", "display: block");
+    ans4Btn.setAttribute("value", "wrong");
 }
 
 function main() {
@@ -207,30 +227,29 @@ quizElStartBtn.addEventListener("click", function (event) {
     event.preventDefault();
     main()
 });
-
+// When an answer is clicked decide if it was correct answer and move to next question
 buttonsEl.addEventListener("click", function (event) {
-    event.preventDefault();
     if (event.target.value === "correct") {
         responseEl.textContent = "Correct Answer";
         disappear();
 
-        if(q === 1){
+        if (q === 1) {
             q++;
             question2();
         }
-        else if(q === 2){
+        else if (q === 2) {
             q++;
             question3();
         }
-        else if (q === 3){
+        else if (q === 3) {
             q++;
             question4();
         }
-        else if (q === 4){
+        else if (q === 4) {
             q++;
             question5();
         }
-        else if (q === 5){
+        else if (q === 5) {
             q++
             complete++
         }
@@ -239,5 +258,25 @@ buttonsEl.addEventListener("click", function (event) {
         responseEl.textContent = "Wrong Answer";
         seconds = seconds - 10;
         disappear();
+        if (q === 1) {
+            q++;
+            question2();
+        }
+        else if (q === 2) {
+            q++;
+            question3();
+        }
+        else if (q === 3) {
+            q++;
+            question4();
+        }
+        else if (q === 4) {
+            q++;
+            question5();
+        }
+        else if (q === 5) {
+            q++
+            complete++
+        }
     }
 })
