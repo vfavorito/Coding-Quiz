@@ -1,0 +1,20 @@
+.ansBtn{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: burlywood;
+    width: 200px;
+}
+.submitBtn{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: burlywood;
+}
+.mainBtns, .scoreBtns{
+    background-color: burlywood;
+    width:200px;
+    margin-right: 20px;
+}
+body{
+    background-image: url("https://images.pexels.com/photos/5088017/pexels-photo-5088017.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size: 100%;
+}

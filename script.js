@@ -5,11 +5,12 @@ let response = document.querySelector("#response");
 let seconds = 0;
 let complete = 0;
 let question = 0;
-let responseEl = document.createElement("p");
+let responseEl = document.createElement("h3");
 response.appendChild(responseEl);
 // Creating and Displaying High Score Button
 let scoreBtnEl = document.createElement("button");
 scoreBtnEl.textContent = "View High Scores";
+scoreBtnEl.setAttribute("class","mainBtns");
 highScoreBtn.appendChild(scoreBtnEl);
 // function that runs when you click the view high scores button
 scoreBtnEl.addEventListener("click", function () {
@@ -23,6 +24,7 @@ scoreBtnEl.addEventListener("click", function () {
     }
     let backBtn = document.createElement("button");
     backBtn.textContent = "Go Back";
+    backBtn.setAttribute("class","scoreBtns")
     response.appendChild(backBtn);
     backBtn.addEventListener("click", function () {
         window.location.reload();
@@ -37,12 +39,13 @@ let quizElHead = document.createElement("h1");
 quizElHead.textContent = "Coding Quiz";
 quiz.appendChild(quizElHead);
 // Creating and Diplaying Quiz Body
-let quizElBody = document.createElement("p");
-quizElBody.textContent = "This Quiz contains 5 multiple chooice coding related questions.  You are given 75 seconds to complete the Quiz, but be careful a wrong answer will subtract 10 seconds from your time!  Try to complete the quiz with as much time left on the clock as possible.  Click the Start Button to begin!";
+let quizElBody = document.createElement("h5");
+quizElBody.textContent = "This Quiz contains 5 multiple choice coding related questions.  You are given 75 seconds to complete the Quiz, but be careful a wrong answer will subtract 10 seconds from your time!  Try to complete the quiz with as much time left on the clock as possible.  Click the Start Button to begin!";
 quiz.appendChild(quizElBody);
 // Creating and Displaying Start Button
 let quizElStartBtn = document.createElement("button");
 quizElStartBtn.textContent = "Start";
+quizElStartBtn.setAttribute("class","mainBtns")
 quiz.appendChild(quizElStartBtn);
 let buttonsEl = document.querySelector("#buttons");
 // creating divs to put answer buttons in
@@ -70,11 +73,17 @@ ans1Btn.setAttribute("style", "Display: none");
 ans2Btn.setAttribute("style", "Display: none");
 ans3Btn.setAttribute("style", "Display: none");
 ans4Btn.setAttribute("style", "Display: none");
+//assigning a class to these answer buttons
+ans1Btn.setAttribute("class","ansBtn");
+ans2Btn.setAttribute("class","ansBtn");
+ans3Btn.setAttribute("class","ansBtn");
+ans4Btn.setAttribute("class","ansBtn");
 // creating inputs for endscreen function
 let initials = document.createElement("input");
 let submitBtn = document.createElement("input");
 initials.setAttribute("type", "text");
 submitBtn.setAttribute("type", "submit");
+submitBtn.setAttribute("class","submitBtn");
 buttonsEl.appendChild(initials);
 buttonsEl.appendChild(submitBtn);
 initials.setAttribute("style", "display: none");
@@ -82,7 +91,7 @@ submitBtn.setAttribute("style", "display: none");
 function disappear() {
     setTimeout(function () {
         responseEl.textContent = "";
-    }, 1000)
+    }, 650)
 }
 // Starts counting down time once start button is clicked and stops when seconds = 0
 function startTimer() {
@@ -101,18 +110,18 @@ function question1() {
         return;
     }
     quizElHead.textContent = "Question 1";
-    quizElBody.textContent = "insert question 1 here";
+    quizElBody.textContent = "Text in which of these tags will display the largest?";
     quizElStartBtn.remove();
-    ans1Btn.textContent = "Answer 1";
+    ans1Btn.textContent = "<h1>";
     ans1Btn.setAttribute("style", "display: block");
     ans1Btn.setAttribute("value", "correct");
-    ans2Btn.textContent = "Answer 2";
+    ans2Btn.textContent = "<h2>";
     ans2Btn.setAttribute("style", "display: block");
     ans2Btn.setAttribute("value", "wrong");
-    ans3Btn.textContent = "Answer 3";
+    ans3Btn.textContent = "<h3>";
     ans3Btn.setAttribute("style", "display: block");
     ans3Btn.setAttribute("value", "wrong");
-    ans4Btn.textContent = "Answer 4";
+    ans4Btn.textContent = "<p>";
     ans4Btn.setAttribute("style", "display: block");
     ans4Btn.setAttribute("value", "wrong");
 }
@@ -121,14 +130,14 @@ function question2() {
         return;
     }
     quizElHead.textContent = "Question 2";
-    quizElBody.textContent = "insert question 2 here";
-    ans1Btn.textContent = "Answer 1b";
+    quizElBody.textContent = "What is a collection of properties, where a property associates a name with a value?";
+    ans1Btn.textContent = "A String";
     ans1Btn.setAttribute("value", "wrong");
-    ans2Btn.textContent = "Answer 2b";
+    ans2Btn.textContent = "An Object";
     ans2Btn.setAttribute("value", "correct");
-    ans3Btn.textContent = "Answer 3b";
+    ans3Btn.textContent = "An Array";
     ans3Btn.setAttribute("value", "wrong");
-    ans4Btn.textContent = "Answer 4b";
+    ans4Btn.textContent = "None of the above";
     ans4Btn.setAttribute("value", "wrong");
 }
 function question3() {
@@ -136,14 +145,14 @@ function question3() {
         return;
     }
     quizElHead.textContent = "Question 3";
-    quizElBody.textContent = "insert question 3 here";
-    ans1Btn.textContent = "Answer 1c";
+    quizElBody.textContent = "The space immediately surrounding HTML content is: ";
+    ans1Btn.textContent = "Margin";
     ans1Btn.setAttribute("value", "wrong");
-    ans2Btn.textContent = "Answer 2c";
+    ans2Btn.textContent = "Border";
     ans2Btn.setAttribute("value", "wrong");
-    ans3Btn.textContent = "Answer 3c";
+    ans3Btn.textContent = "Padding";
     ans3Btn.setAttribute("value", "correct");
-    ans4Btn.textContent = "Answer 4c";
+    ans4Btn.textContent = "None of the above";
     ans4Btn.setAttribute("value", "wrong");
 }
 function question4() {
@@ -151,14 +160,14 @@ function question4() {
         return;
     }
     quizElHead.textContent = "Question 4";
-    quizElBody.textContent = "insert question 4 here";
-    ans1Btn.textContent = "Answer 1d";
+    quizElBody.textContent = "If fruit = [apple, banana, orange, grape].  What does fruit[3] return?";
+    ans1Btn.textContent = "apple";
     ans1Btn.setAttribute("value", "wrong");
-    ans2Btn.textContent = "Answer 2d";
+    ans2Btn.textContent = "banana";
     ans2Btn.setAttribute("value", "wrong");
-    ans3Btn.textContent = "Answer 3d";
+    ans3Btn.textContent = "orange";
     ans3Btn.setAttribute("value", "wrong");
-    ans4Btn.textContent = "Answer 4d";
+    ans4Btn.textContent = "grape";
     ans4Btn.setAttribute("value", "correct");
 }
 function question5() {
@@ -166,14 +175,14 @@ function question5() {
         return;
     }
     quizElHead.textContent = "Question 5";
-    quizElBody.textContent = "insert question 5 here";
-    ans1Btn.textContent = "Answer 1e";
+    quizElBody.textContent = "When Using a Bootstrap Grid System how many columns make up the width of a row?";
+    ans1Btn.textContent = "12";
     ans1Btn.setAttribute("value", "correct");
-    ans2Btn.textContent = "Answer 2e";
+    ans2Btn.textContent = "9";
     ans2Btn.setAttribute("value", "wrong");
-    ans3Btn.textContent = "Answer 3e";
+    ans3Btn.textContent = "10";
     ans3Btn.setAttribute("value", "wrong");
-    ans4Btn.textContent = "Answer 4e";
+    ans4Btn.textContent = "8";
     ans4Btn.setAttribute("value", "wrong");
 }
 function endScreen() {
@@ -207,8 +216,10 @@ function highScores() {
     }
     let homeBtn = document.createElement("button");
     homeBtn.textContent = "Try Again";
+    homeBtn.setAttribute("class","scoreBtns")
     let clearBtn = document.createElement("button");
     clearBtn.textContent = "Clear High Scores";
+    clearBtn.setAttribute("class","scoreBtns")
     quizElBody.appendChild(homeBtn);
     quizElBody.appendChild(clearBtn);
     homeBtn.addEventListener("click", function () {
