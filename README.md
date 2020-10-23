@@ -21,7 +21,7 @@ In this repository I created a timed code related quiz.  The quiz consists of 5 
 ![HighScores](images/highScores.png)
 
 ### Example
-Here is a link to the Quiz:  [https://vfavorito.github.io/Coding-Quiz/](https://vfavorito.github.io/Coding-Quiz/)
+Here is a link to the Quiz:  [https://vfavorito.github.io/coding-quiz/](https://vfavorito.github.io/coding-quiz/)
 
 ### Installation
 To install this project simply clone this repository to your local directory and access it using Visual Studio Code
