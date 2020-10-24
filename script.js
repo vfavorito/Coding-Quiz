@@ -109,6 +109,7 @@ function question1() {
     if (question === 2) {
         return;
     }
+    scoreBtnEl.setAttribute("style","display: none");
     quizElHead.textContent = "Question 1";
     quizElBody.textContent = "Text in which of these tags will display the largest?";
     quizElStartBtn.remove();
