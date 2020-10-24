@@ -7,17 +7,17 @@ In this repository I created a timed code related quiz.  The quiz consists of 5 
 
 ## How it works!
 
-### The process goes Like this:
-### Click The Start Button
+
+## Click The Start Button
 ![Start Button](images/startBtn.png)
 
-### Answer The Questions
+## Answer The Questions
 ![AnswerQuestions](images/ansQuestions.png)
 
-### Submit Your Initials
+## Submit Your Initials
 ![Initials](images/initials.png)
 
-### View Your High Scores
+## View Your High Scores
 ![HighScores](images/highScores.png)
 
 ### Example
